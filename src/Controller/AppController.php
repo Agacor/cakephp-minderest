@@ -50,4 +50,12 @@ class AppController extends Controller
          */
         //$this->loadComponent('FormProtection');
     }
+
+    // BeforeRender
+    public function beforeRender(\Cake\Event\EventInterface $event)
+    {
+        $this->viewBuilder()->setTheme('Bootstrap4');
+        $this->viewBuilder()->setLayout('dashboard');
+    }
+
 }

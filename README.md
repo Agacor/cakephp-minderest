@@ -2,7 +2,10 @@
 
 ## Installation
 
-1. clone repository into your localhost or similar webserver
+1. Clone repository into your localhost or similar webserver
+2. Config DDBB connection
+3. Create tables
+4. Seed tables 
 
 You can now either use your machine's webserver to view the default home page, or start
 up the built-in webserver with:
@@ -11,12 +14,12 @@ up the built-in webserver with:
 bin/cake server -p 8765
 ```
 
-Then visit `http://localhost:8765` to see the welcome page.
+Then visit `http://localhost:8765` to see the main page.
 
 ## Configuration
 
-Edit the environment specific `config/app_local.php` and setup the 
-`'Datasources'` and any other configuration relevant for your application.
+Edit the environment specific `config/app_local.php` and setup the default connection in
+`'Datasources'` .
 Other environment agnostic settings can be changed in `config/app.php`.
 
 ## Layout
