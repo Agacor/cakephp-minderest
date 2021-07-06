@@ -1,6 +1,6 @@
 {
-    "name": "cakephp/app",
-    "description": "CakePHP skeleton app",
+    "name": "agacor/cakephp-minderest",
+    "description": "CakePHP Application for Minderest",
     "homepage": "https://cakephp.org",
     "type": "project",
     "license": "MIT",
