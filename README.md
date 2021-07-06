@@ -37,8 +37,11 @@ bin/cake migrations migrate
 ```
 
 5. Seed tables 
+
 ```bash
 bin/cake migrations seed --seed DatabaseSeed
+                -OR-
+bin/cake migrations seed --seed ClientesSeed
 ```
 
 You can now either use your machine's webserver to view the default home page, or start
