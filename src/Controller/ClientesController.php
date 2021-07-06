@@ -15,8 +15,10 @@ class ClientesController extends AppController
     public function initialize(): void
     {
         $this->set('pageHeader', __('Clientes'));
+        $this->set('sidebarMenu', 'Clientes');
     }
 
+    // Index
     public function index()
     {
         $this->loadModel('Clientes');
@@ -24,6 +26,15 @@ class ClientesController extends AppController
 
         $this->set(compact('clientes'));
     }
-    
 
+
+    // Modal Add
+    public function modalAdd()
+    {
+        $this->viewBuilder()->setLayout('modal_form');
+
+
+
+    }
+    
 }

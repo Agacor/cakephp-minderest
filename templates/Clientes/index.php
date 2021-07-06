@@ -1,3 +1,10 @@
+<?php 
+    $this->set('headerLinks', [
+        ['title' => __('Añadir'), 'url' => '/clientes/modal-add', 'options' => ['modal' => 'static']],
+        //['title' => __('Exportar'), 'url' => '', 'options' => []],
+    ]) 
+?>
+
 <div class="table-responsive">
     <table class="table table-striped table-sm">
         <thead>

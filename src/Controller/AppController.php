@@ -55,7 +55,18 @@ class AppController extends Controller
     public function beforeRender(\Cake\Event\EventInterface $event)
     {
         $this->viewBuilder()->setTheme('Bootstrap4');
-        $this->viewBuilder()->setLayout('dashboard');
+        
+        switch ($this->viewBuilder()->getClassName()) {
+            // case '':
+            //     # code...
+            //     break;
+            
+            default:
+                $this->viewBuilder()->setClassName('Bootstrap4\View\AppView');
+                break;
+        }
+        
+        //$this->viewBuilder()->setLayout('dashboard');
     }
 
 }
