@@ -6,7 +6,7 @@
 2. Config DDBB connection
 3. Create tables
 ```bash
-bin/cake migrations migrate -p Web
+bin/cake migrations migrate
 ```
 4. Seed tables 
 
