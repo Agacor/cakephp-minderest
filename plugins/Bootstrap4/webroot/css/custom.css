@@ -1,0 +1,12 @@
+/*********************************
+    FORMS
+**********************************/
+
+.form-group em .required, 
+.form-group span .required, 
+.form-group label .required { color:red; }
+
+.form-group.input.required .control-label::after {
+    color: red;
+    content: "*";
+}

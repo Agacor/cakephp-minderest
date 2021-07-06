@@ -14,6 +14,7 @@
 
     <?= $this->Html->css([
         'dashboard.css',
+        'custom.css',
         //'/plugins/bootstrap-4.6.0/dist/css/bootstrap.min.css', 
         //'/plugins/jquery-ui-1.12.1/jquery-ui.min.css',
         //'/plugins/tablesorter/2.30.1/dist/css/theme.bootstrap.min.css',
