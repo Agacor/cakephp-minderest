@@ -1,5 +1,5 @@
 <?php 
-$this->set('title', __('Minderest'));
+$this->assign('title', __('Minderest'));
 $this->set('pageHeader', __('Inicio'));
 $this->set('sidebarMenu', 'Inicio');
 ?>
@@ -7,7 +7,10 @@ $this->set('sidebarMenu', 'Inicio');
 <div class="container">
     <h1><?=__('Diagrama EER')?></h1>
 
-    <?=$this->Html->image('/img/eer-minderest.png', ['alt' => __('Diagrama EER')])?>
+    <?=$this->Html->image('/img/eer-minderest.png', [
+        'alt' => __('Diagrama EER'), 
+        'class' => 'img-fluid',
+    ])?>
 
     <p>En el supuesto Minderest tiene una tabla de productos y otra de clientes.</p>
 
