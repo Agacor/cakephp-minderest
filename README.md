@@ -5,6 +5,9 @@
 1. Clone repository into your localhost or similar webserver
 2. Config DDBB connection
 3. Create tables
+```bash
+bin/cake migrations migrate -p Web
+```
 4. Seed tables 
 
 You can now either use your machine's webserver to view the default home page, or start
