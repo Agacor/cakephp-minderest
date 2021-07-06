@@ -1,0 +1,43 @@
+<?php 
+$this->assign('title', __('Añadir Producto'));
+?>
+
+<?php $this->start('modal_form'); ?>
+    <?= $this->Form->create(null, [
+        'id'=>'formModalAddProducto', 'url' => "", 'type' => 'post', 'class'=>"needs-validation", 
+        'autocomplete'=>'off', 'data-boxloader' => 'true', 'data-ajax-submit' => true,
+    ]);?>
+<?php $this->end(); ?>
+
+<div class="row">
+    <div class="col-xs-12 col-md-6">
+        <!-- MPN -->
+        <?=$this->Form->control('mpn', [
+            'class' => 'form-control', 'required' => true,
+            'label' => __('MPN'), 
+            'placeholder' => __('Manufacturer Part Number'),
+        ])?>
+    </div>
+    <div class="col-xs-12 col-md-6">
+        <!-- EAN 13 -->
+        <?=$this->Form->control('ean13', [
+            'class' => 'form-control',
+            'label' => __('EAN 13'), 
+        ])?>
+    </div>
+</div>
+
+<!-- Nombre -->
+<?=$this->Form->control('nombre', [
+    'class' => 'form-control', 'required' => true,
+    'label' => __('Nombre'), 
+])?>
+<!-- Descripción -->
+<?=$this->Form->control('descripcion', [
+    'type' => 'textarea', 'rows'=> 3,
+    'class' => 'form-control', 
+    'label' => __('Descripción'), 
+])?>
+
+
+
