@@ -7,7 +7,13 @@
 git clone https://github.com/Agacor/cakephp_minderest.git
 ```
 
-2. Edit the environment specific `config/app_local.php` and setup the default connection in
+2. Update composer dependencies.
+```bash
+composer update
+composer dumpautoload
+```
+
+3. Edit the environment specific `config/app_local.php` and setup the default connection in
 `'Datasources'` .
 
 ```php
@@ -25,12 +31,12 @@ git clone https://github.com/Agacor/cakephp_minderest.git
 
 ```
 
-3. Create tables
+4. Create tables
 ```bash
 bin/cake migrations migrate
 ```
 
-4. Seed tables 
+5. Seed tables 
 ```bash
 bin/cake migrations seed --seed DatabaseSeed
 ```
