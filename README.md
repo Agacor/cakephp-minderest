@@ -7,8 +7,23 @@
 git clone https://github.com/Agacor/cakephp_minderest.git
 ```
 
-2. Config DDBB connection. Edit the environment specific `config/app_local.php` and setup the default connection in
+2. Edit the environment specific `config/app_local.php` and setup the default connection in
 `'Datasources'` .
+
+```php
+'Datasources' => [
+    ...
+    'default' => [
+        'host' => 'localhost',
+        'port' => '3306',
+        'username' => 'root',
+        'password' => '',
+        'database' => 'minderest',
+        'url' => env('DATABASE_URL', null),
+    ],
+    ...
+
+```
 
 3. Create tables
 ```bash
