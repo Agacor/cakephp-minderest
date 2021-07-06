@@ -3,6 +3,10 @@
 ## Installation
 
 1. Clone repository into your localhost or similar webserver
+```bash
+git clone https://github.com/Agacor/cakephp_minderest.git
+```
+
 2. Config DDBB connection. Edit the environment specific `config/app_local.php` and setup the default connection in
 `'Datasources'` .
 
@@ -10,6 +14,7 @@
 ```bash
 bin/cake migrations migrate
 ```
+
 4. Seed tables 
 ```bash
 bin/cake migrations seed --seed DatabaseSeed
@@ -21,14 +26,6 @@ up the built-in webserver with:
 ```bash
 bin/cake server -p 8765
 ```
-
-Then visit `http://localhost:8765` to see the main page.
-
-## Configuration
-
-Edit the environment specific `config/app_local.php` and setup the default connection in
-`'Datasources'` .
-Other environment agnostic settings can be changed in `config/app.php`.
 
 ## Layout
 
