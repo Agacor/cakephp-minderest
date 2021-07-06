@@ -1,6 +1,6 @@
 {
     "name": "agacor/cakephp-minderest",
-    "description": "CakePHP Application for Minderest",
+    "description": "CakePHP Minderest Application",
     "homepage": "https://cakephp.org",
     "type": "project",
     "license": "MIT",
@@ -50,6 +50,7 @@
         "test": "phpunit --colors=always"
     },
     "prefer-stable": true,
+    "minimum-stability": "dev",
     "config": {
         "sort-packages": true
     }
