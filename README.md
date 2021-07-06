@@ -3,12 +3,17 @@
 ## Installation
 
 1. Clone repository into your localhost or similar webserver
-2. Config DDBB connection
+2. Config DDBB connection. Edit the environment specific `config/app_local.php` and setup the default connection in
+`'Datasources'` .
+
 3. Create tables
 ```bash
 bin/cake migrations migrate
 ```
 4. Seed tables 
+```bash
+bin/cake migrations seed --seed DatabaseSeed
+```
 
 You can now either use your machine's webserver to view the default home page, or start
 up the built-in webserver with:
@@ -27,6 +32,4 @@ Other environment agnostic settings can be changed in `config/app.php`.
 
 ## Layout
 
-The app skeleton uses [Milligram](https://milligram.io/) (v1.3) minimalist CSS
-framework by default. You can, however, replace it with any other library or
-custom styles.
+The app uses Bottstrap4.6 [Dashboard](https://getbootstrap.com/docs/4.6/examples/dashboard/) template.
