@@ -3,12 +3,6 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use Cake\Core\Configure;
-use Cake\Http\Exception\ForbiddenException;
-use Cake\Http\Exception\NotFoundException;
-use Cake\Http\Response;
-use Cake\View\Exception\MissingTemplateException;
-
 class ProductosController extends AppController
 {
     
@@ -32,9 +26,6 @@ class ProductosController extends AppController
     public function modalAdd()
     {
         $this->viewBuilder()->setLayout('modal_form');
-
-
-
     }
     
 }
