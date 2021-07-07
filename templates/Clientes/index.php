@@ -1,7 +1,7 @@
 <?php 
     $this->set('headerLinks', [
-        ['title' => __('Añadir'), 'url' => '/clientes/modal-add', 'options' => ['modal' => 'static']],
-        //['title' => __('Exportar'), 'url' => '', 'options' => []],
+        ['title' => __('Añadir Cliente'), 'url' => '/clientes/modal-add', 'options' => ['modal' => 'static']],
+        ['title' => __('Vincular Productos'), 'url' => '/clientes/modal-vincular-productos', 'options' => ['modal' => 'static']],
     ]) 
 ?>
 
@@ -27,7 +27,7 @@
                     <td class="align-right"><?=$cliente->total_productos?></td>
                     <td><?=$cliente->created?></td>
                     <td>
-                        edit | delete
+                        view | edit | delete
                     </td>
                 </tr>
 

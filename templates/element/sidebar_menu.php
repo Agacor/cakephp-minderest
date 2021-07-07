@@ -1,10 +1,4 @@
 <ul class="nav flex-column">
-    <li class="nav-item">
-        <?=$this->html->link('<span data-feather="home"></span>'.__('Inicio'), '/', [
-            'escape' => false,
-            'class' => ($sidebarMenu==='Inicio') ? 'nav-link active' : 'nav-link',
-        ])?>
-    </li>
     <!-- Clientes-->
     <li class="nav-item">
         <?=$this->html->link('<span data-feather="users"></span>'.__('Clientes'), '/clientes', [
@@ -19,4 +13,12 @@
             'class' => ($sidebarMenu==='Productos') ? 'nav-link active' : 'nav-link',
         ])?>
     </li>
+    <!-- Fabricantes-->
+    <!-- <li class="nav-item">
+        <?=$this->html->link('<span data-feather="shopping-cart"></span>'.__('Fabricantes'), '/fabricantes', [
+            'disabled' => true,
+            'escape' => false,
+            'class' => ($sidebarMenu==='Fabricantes') ? 'nav-link active disabled' : 'nav-link disabled',
+        ])?>
+    </li> -->
 </ul>
