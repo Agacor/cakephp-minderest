@@ -9,12 +9,14 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>MPN</th>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th class="align-right">&sum; Clientes</th>
-                <th>Fª Alta</th>
-                <th>Acciones</th>
+                <th><?=__('MPN')?></th>
+                <th><?=__('Nombre')?></th>
+                <th><?=__('Descripción')?></th>
+                <th class="text-right">&sum; <?=__('Productos Clientes')?></th>
+                <th><?=__('Fª Alta')?></th>
+                <th class="text-center">
+                    <?=__('Acciones')?>
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -22,12 +24,13 @@
 
                 <tr>
                     <td><?=$producto->id?></td>
-                    <td><?=$producto->nif?></td>
+                    <td><?=$producto->mpn?></td>
                     <td><?=$producto->nombre?></td>
-                    <td class="align-right"><?=$producto->total_clientes?></td>
+                    <td><?=$producto->descripcion?></td>
+                    <td class="text-right"><?=$producto->total_clientes ?: '0'?></td>
                     <td><?=$producto->created?></td>
-                    <td>
-                        view | edit | delete
+                    <td class="text-center">
+                        <?=__('ver')?> | <?=__('editar')?> | <?=__('eliminar')?>
                     </td>
                 </tr>
 

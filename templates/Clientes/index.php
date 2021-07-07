@@ -10,11 +10,13 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Nif</th>
-                <th>Nombre</th>
-                <th class="align-right">&sum; Productos</th>
-                <th>Fª Alta</th>
-                <th>Acciones</th>
+                <th><?=__('DNI/CIF')?></th>
+                <th><?=__('Nombre')?></th>
+                <th class="text-right">&sum; <?=__('Productos')?></th>
+                <th><?=__('Fª Alta')?></th>
+                <th class="text-center">
+                    <?=__('Acciones')?>
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -24,10 +26,10 @@
                     <td><?=$cliente->id?></td>
                     <td><?=$cliente->nif?></td>
                     <td><?=$cliente->nombre?></td>
-                    <td class="align-right"><?=$cliente->total_productos?></td>
+                    <td class="text-right"><?=$cliente->total_productos?></td>
                     <td><?=$cliente->created?></td>
-                    <td>
-                        view | edit | delete
+                    <td class="text-center">
+                        <?=__('ver')?> | <?=__('editar')?> | <?=__('eliminar')?>
                     </td>
                 </tr>
 

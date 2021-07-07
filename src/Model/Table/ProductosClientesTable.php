@@ -95,10 +95,10 @@ class ProductosClientesTable extends Table
     {
         $rules->add($rules->existsIn(['producto_id'], 'Productos'), ['errorField' => 'producto_id']);
         $rules->add($rules->existsIn(['cliente_id'], 'Clientes'), ['errorField' => 'cliente_id']);
+        $rules->add($rules->isUnique(['producto_id', 'cliente_id'], __('El producto ya existe.')));
         $rules->add($rules->isUnique(['cliente_id', 'nombre'], __('El nombre del producto ya existe.')));
 
         return $rules;
     }
-
 
 }

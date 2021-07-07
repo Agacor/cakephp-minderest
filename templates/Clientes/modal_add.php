@@ -14,7 +14,7 @@ $this->assign('title', __('Añadir Cliente'));
     <div class="col-xs-12 col-md-4">
         <!-- Nif / Cif -->
         <div class="form-group">
-            <label class="control-label"><?=__('NIF/CIF')?></label>
+            <label class="control-label"><?=__('DNI/CIF')?></label>
             <?=$this->form->input('nif', [
                 'class' => 'form-control', 'required' => true,
             ])?>

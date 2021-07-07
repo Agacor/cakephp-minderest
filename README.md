@@ -36,12 +36,13 @@ composer dumpautoload
 bin/cake migrations migrate
 ```
 
-5. Seed tables 
+5. Seed tables (Only ClientesSeed needed)
 
 ```bash
 bin/cake migrations seed --seed DatabaseSeed
                 -OR-
 bin/cake migrations seed --seed ClientesSeed
+bin/cake migrations seed --seed ProductosSeed
 ```
 
 You can now either use your machine's webserver to view the default home page, or start

@@ -181,6 +181,13 @@ class Initial extends AbstractMigration
             )
             ->addIndex(
                 [
+                    'producto_id',
+                    'cliente_id',
+                ],
+                ['unique' => true]
+            )
+            ->addIndex(
+                [
                     'cliente_id',
                 ]
             )
