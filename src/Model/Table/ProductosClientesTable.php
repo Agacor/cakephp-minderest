@@ -43,16 +43,21 @@ class ProductosClientesTable extends Table
         parent::initialize($config);
 
         $this->setTable('productos_clientes');
-        $this->setDisplayField('id');
-        $this->setPrimaryKey('id');
+        $this->setDisplayField('display');
 
+        // [BEHAVIORS]
         $this->addBehavior('Timestamp');
-
-        $this->belongsTo('Productos', [
+        
+        // [ORM]
+        $this->belongsTo('Producto', [
+            'propertyName' => 'Producto',
+            'className' => 'Producto',
             'foreignKey' => 'producto_id',
             'joinType' => 'INNER',
         ]);
-        $this->belongsTo('Clientes', [
+        $this->belongsTo('Cliente', [
+            'propertyName' => 'Cliente',
+            'className' => 'Cliente',
             'foreignKey' => 'cliente_id',
             'joinType' => 'INNER',
         ]);
@@ -94,4 +99,6 @@ class ProductosClientesTable extends Table
 
         return $rules;
     }
+
+
 }

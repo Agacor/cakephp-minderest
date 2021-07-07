@@ -42,11 +42,12 @@ class ClientesTable extends Table
         parent::initialize($config);
 
         $this->setTable('clientes');
-        $this->setDisplayField('id');
-        $this->setPrimaryKey('id');
+        $this->setDisplayField('display');
 
+        // [BEHAVIORS]
         $this->addBehavior('Timestamp');
 
+        // [ORM]
         $this->belongsToMany('Productos', [
             'foreignKey' => 'cliente_id',
             'targetForeignKey' => 'producto_id',
@@ -99,4 +100,36 @@ class ClientesTable extends Table
 
         return $rules;
     }
+
+
+    /******************************
+     * CUSTOM FINDERS
+     ******************************/
+    
+    /**
+     * Custom Finder for Autocomplete
+     * @param \Cake\ORM\Query $query
+     * @param array $options
+     * @return \Cake\ORM\Query
+     */
+    public function findAutocomplete(\Cake\ORM\Query $query, array $options)
+    {
+        $alias = $this->getAlias();
+        $query->select([
+            $alias."__id" => "$alias.id",
+            $alias."__label" => "CONCAT('[', $alias.nif, '] ', $alias.nombre)",
+            $alias."__value" => "CONCAT('[', $alias.nif, '] ', $alias.nombre)",
+        ]);
+        // Término de Búsqueda
+        if (!empty($options['search'])) {
+            $conditions = [];
+            $search_words = explode(' ', $options['search']);
+            foreach($search_words as $word) {
+                $conditions[]=["CONCAT('[', $alias.nif, '] ', $alias.nombre) LIKE" => "%$word%"];
+            }
+            $query->where($conditions);
+        }
+        return $query;
+    }
+
 }

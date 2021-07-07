@@ -36,4 +36,16 @@ class Cliente extends Entity
         'modified' => true,
         'productos' => true,
     ];
+
+    protected $_virtual = ['display'];
+    
+    // Virtual Fields
+    protected function _getDisplay()
+    {
+        if (isset($this->nombre)) {
+            return (!empty($this->nif)) ? "[".$this->nif."] ".$this->nombre : $this->nombre;    
+        }
+        return NULL;
+    }
+    
 }

@@ -32,9 +32,17 @@ class ClientesController extends AppController
     public function modalAdd()
     {
         $this->viewBuilder()->setLayout('modal_form');
+    }
 
+    // Modal Vincular Productos
+    public function modalVincularProductos($cliente_id = null)
+    {
+        $this->viewBuilder()->setLayout('modal_form');
 
+        $this->loadModel('Clientes');
+        $clientes = $this->Clientes->find('list');
 
+        $this->set(compact('clientes'));
     }
     
 }
