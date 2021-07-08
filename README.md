@@ -4,7 +4,7 @@
 
 1. Clone repository into your localhost or similar webserver
 ```bash
-git clone https://github.com/Agacor/cakephp_minderest.git
+git clone https://github.com/Agacor/cakephp-minderest.git
 ```
 
 2. Update composer dependencies.
