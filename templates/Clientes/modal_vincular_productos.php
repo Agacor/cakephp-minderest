@@ -49,7 +49,7 @@ $this->assign('modal_size', 'modal-lg');
         <?=$this->Form->control('cliente_id', [
             'id' => 'selectClienteId',
             'type' => 'select', 'options' => $clientes,
-            'class' => 'form-control', 'required' => true,
+            'class' => 'form-control form-control-sm', 'required' => true,
             'label' => __('Cliente'),
             'empty' => __('Seleccione Cliente'),
         ])?>
@@ -59,7 +59,7 @@ $this->assign('modal_size', 'modal-lg');
         <?=$this->Form->hidden('producto_id', ['id' => 'autocompleteProductosId'])?>
         <?=$this->Form->control('producto', [
             'id' => 'autocompleteProductos',
-            'class' => 'form-control', 'required' => true,
+            'class' => 'form-control form-control-sm', 'required' => true,
             'label' => __('Producto'), 'disabled' => true,
             'placeholder' => __('Seleccione Cliente'),
         ])?>

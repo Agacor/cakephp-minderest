@@ -13,7 +13,7 @@ $this->assign('title', __('Editar Producto'));
     <div class="col-xs-12 col-md-6">
         <!-- MPN -->
         <?=$this->Form->control('mpn', [
-            'class' => 'form-control', 'required' => true,
+            'class' => 'form-control form-control-sm', 'required' => true,
             'label' => __('MPN'), 
             'placeholder' => __('Manufacturer Part Number'),
         ])?>
@@ -21,7 +21,7 @@ $this->assign('title', __('Editar Producto'));
     <div class="col-xs-12 col-md-6">
         <!-- EAN 13 -->
         <?=$this->Form->control('ean13', [
-            'class' => 'form-control',
+            'class' => 'form-control form-control-sm',
             'label' => __('EAN 13'), 
         ])?>
     </div>
@@ -29,13 +29,13 @@ $this->assign('title', __('Editar Producto'));
 
 <!-- Nombre -->
 <?=$this->Form->control('nombre', [
-    'class' => 'form-control', 'required' => true,
+    'class' => 'form-control form-control-sm', 'required' => true,
     'label' => __('Nombre'), 
 ])?>
 <!-- Descripción -->
 <?=$this->Form->control('descripcion', [
     'type' => 'textarea', 'rows'=> 3,
-    'class' => 'form-control', 
+    'class' => 'form-control form-control-sm', 
     'label' => __('Descripción'), 
 ])?>
 
