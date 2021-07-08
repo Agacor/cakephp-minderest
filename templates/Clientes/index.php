@@ -13,7 +13,6 @@
                 <th><?=__('DNI/CIF')?></th>
                 <th><?=__('Nombre')?></th>
                 <th class="text-right">&sum; <?=__('Productos')?></th>
-                <th><?=__('Fª Alta')?></th>
                 <th class="text-center">
                     <?=__('Acciones')?>
                 </th>
@@ -27,9 +26,7 @@
                     <td><?=$cliente->nif?></td>
                     <td><?=$cliente->nombre?></td>
                     <td class="text-right"><?=$cliente->total_productos ?: 0?></td>
-                    <td><?=$cliente->created?></td>
                     <td class="text-center">
-                        <!-- <?=__('ver')?> | <?=__('editar')?> | <?=__('eliminar')?> -->
                         <?=$this->Html->modalLink(__('ver'), "/clientes/modal-view/$cliente->id")?> | 
                         <?=$this->Html->modalLink(__('vincular productos'), "/clientes/modal-vincular-productos/$cliente->id")?>
                     </td>
