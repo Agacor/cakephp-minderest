@@ -1,12 +1,8 @@
 <div class="table-responsive">
     <table class="table table-striped table-sm">
         <tr>
-            <th><?=__('Manufacturer Part Number')?></th>
+            <th><?=__('Manufacturer P/N')?></th>
             <td><?=$producto->mpn?></td>
-        </tr>
-        <tr>
-            <th><?=__('EAN 13')?></th>
-            <td><?=$producto->ean13?></td>
         </tr>
         <tr>
             <th><?=__('Nombre')?></th>

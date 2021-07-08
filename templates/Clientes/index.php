@@ -1,6 +1,6 @@
 <?php 
     $this->set('headerLinks', [
-        ['title' => __('Añadir Cliente'), 'url' => '/clientes/modal-add', 'options' => ['modal' => 'static']],
+        //['title' => __('Añadir Cliente'), 'url' => '/clientes/modal-add', 'options' => ['modal' => 'static']],
         ['title' => __('Vincular Productos'), 'url' => '/clientes/modal-vincular-productos', 'options' => ['modal' => 'static']],
     ]) 
 ?>

@@ -9,24 +9,12 @@ $this->assign('title', __('Añadir Producto'));
     ]);?>
 <?php $this->end(); ?>
 
-<div class="row">
-    <div class="col-xs-12 col-md-6">
-        <!-- MPN -->
-        <?=$this->Form->control('mpn', [
-            'class' => 'form-control form-control-sm', 'required' => true,
-            'label' => __('MPN'), 
-            'placeholder' => __('Manufacturer Part Number'),
-        ])?>
-    </div>
-    <div class="col-xs-12 col-md-6">
-        <!-- EAN 13 -->
-        <?=$this->Form->control('ean13', [
-            'class' => 'form-control form-control-sm',
-            'label' => __('EAN 13'), 
-        ])?>
-    </div>
-</div>
-
+<!-- MPN -->
+<?=$this->Form->control('mpn', [
+    'class' => 'form-control form-control-sm', 'required' => true,
+    'label' => __('MPN'), 
+    'placeholder' => __('Manufacturer Part Number'),
+])?>
 <!-- Nombre -->
 <?=$this->Form->control('nombre', [
     'class' => 'form-control form-control-sm', 'required' => true,

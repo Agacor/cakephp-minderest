@@ -100,12 +100,6 @@ class Initial extends AbstractMigration
                 'limit' => 16777215,
                 'null' => true,
             ])
-            ->addColumn('ean13', 'string', [
-                'comment' => 'Código EAN opcional',
-                'default' => null,
-                'limit' => 255,
-                'null' => true,
-            ])
             ->addColumn('created', 'timestamp', [
                 'comment' => 'Podría usarse CURRENT_TIMESTAMP como valor predeterminado, en este caso lo delegaremos en el código',
                 'default' => null,
@@ -130,8 +124,20 @@ class Initial extends AbstractMigration
             )
             ->addIndex(
                 [
-                    'ean13',
+                    'created',
                 ]
+            )
+            ->addIndex(
+                [
+                    'modified',
+                ]
+            )
+            ->addIndex(
+                [
+                    'nombre',
+                    'descripcion',
+                ],
+                ['type' => 'fulltext']
             )
             ->create();
 

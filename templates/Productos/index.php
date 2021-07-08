@@ -9,9 +9,9 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th><?=__('MPN')?></th>
+                <th><?=__('Manufacturer P/N')?></th>
                 <th><?=__('Nombre')?></th>
-                <th><?=__('Descripción')?></th>
+                <!-- <th><?=__('Descripción')?></th> -->
                 <th class="text-right">&sum; <?=__('Productos Clientes')?></th>
                 <th><?=__('Fª Alta')?></th>
                 <th class="text-center">
@@ -26,7 +26,7 @@
                     <td><?=$producto->id?></td>
                     <td><?=$producto->mpn?></td>
                     <td><?=$producto->nombre?></td>
-                    <td><?=$producto->descripcion?></td>
+                    <!-- <td><?=$producto->descripcion?></td> -->
                     <td class="text-right"><?=$producto->total_clientes ?: '0'?></td>
                     <td><?=$producto->created?></td>
                     <td class="text-center">
