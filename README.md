@@ -13,7 +13,7 @@ composer update
 composer dumpautoload
 ```
 
-3. Edit the environment specific `config/app_local.php` and setup the default connection in
+3. Rename the environment specific `config/app_local.example.php` to `config/app_local.php` and setup the default connection in
 `'Datasources'` .
 
 ```php
@@ -31,12 +31,18 @@ composer dumpautoload
 
 ```
 
-4. Create tables
+4. Create database called `minderest`
+
+```bash
+mysql> CREATE DATABASE minderest;
+```
+
+5. Create tables
 ```bash
 bin/cake migrations migrate
 ```
 
-5. Seed tables (Only ClientesSeed needed)
+6. Seed tables (Only ClientesSeed needed)
 
 ```bash
 bin/cake migrations seed --seed DatabaseSeed
@@ -46,7 +52,7 @@ bin/cake migrations seed --seed ProductosSeed
 ```
 
 You can now either use your machine's webserver to view the default home page, or start
-up the built-in webserver with:
+up the built-in webserver http://localhost:8765 with:
 
 ```bash
 bin/cake server -p 8765
@@ -54,4 +60,6 @@ bin/cake server -p 8765
 
 ## Layout
 
-The app uses Bottstrap4.6 [Dashboard](https://getbootstrap.com/docs/4.6/examples/dashboard/) template.
+The app uses Bottstrap 4.6 [Dashboard](https://getbootstrap.com/docs/4.6/examples/dashboard/) template.
+
+The app uses [CakePHP 4.x](https://book.cakephp.org/4/en/index.html) framework.
