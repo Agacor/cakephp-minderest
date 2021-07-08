@@ -26,7 +26,7 @@
                     <td><?=$cliente->id?></td>
                     <td><?=$cliente->nif?></td>
                     <td><?=$cliente->nombre?></td>
-                    <td class="text-right"><?=$cliente->total_productos?></td>
+                    <td class="text-right"><?=$cliente->total_productos ?: 0?></td>
                     <td><?=$cliente->created?></td>
                     <td class="text-center">
                         <!-- <?=__('ver')?> | <?=__('editar')?> | <?=__('eliminar')?> -->
