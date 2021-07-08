@@ -6,42 +6,63 @@ $this->assign('modal_size', 'modal-lg');
 <?php $this->start('modal_form'); ?>
     <?= $this->Form->create(null, [
         'id'=>'formModalVinvularProductosClientes', 'url' => "", 'type' => 'post', 'class'=>"needs-validation", 
-        'autocomplete'=>'off', 'data-boxloader' => 'true', 'data-ajax-submit' => true,
+        'autocomplete'=>'off', 'data-boxloader' => 'true', //'data-ajax-submit' => true,
     ]);?>
 <?php $this->end(); ?>
 
 <script>
 <?php $this->append('modalCallback'); ?>
 
+    //var conditions = {cliente_id: $('#selectClienteId').val()};
+    var cacheAutocompleteProductos = {};
+
     // Clientes Handler
     $('#selectClienteId').on('change', function(){
         // Reset Productos
+        cacheAutocompleteProductos = {};
         $("#autocompleteProductos").val('');
         $("#autocompleteProductosId").val('');
+        $("#nombreProductoCliente").val('').prop('disabled', true);
         // Toggle Disabled
         $("#autocompleteProductos").prop('disabled', (!$(this).val()));
         $("#autocompleteProductos").attr('placeholder', '<?=__('Busque un producto')?>');
     });
 
-    // var productos;
-    // var conditions = {cliente_id: $('#selectClienteId').val()};
-    // $.getJSON('<?=$this->Url->build("/ajax/autocomplete-productos")?>', conditions, function(data){
-    //     productos = data.autocomplete; 
-    //     $("#autocompleteProductos").autocomplete({
-    //         source: productos,
-    //         change: function (event, ui) {
-    //             if(!ui.item){
-    //                 $(this).val('');
-    //                 $("#autocompleteProductosId").val('');
-    //             } else {
-    //                 $("#autocompleteProductosId").val(ui.item.id);
-    //             }
-    //         }
-    //     });
-    // });
+    // Autocomplete Productos
+    $("#autocompleteProductos").autocomplete({
+        minLength: 3,
+        source: function( request, response ) {
+            var term = request.term;
+            var search = {
+                search:term,
+                cliente_id: $('#selectClienteId').val()
+            };
+            if (term in cacheAutocompleteProductos) {
+                response(cacheAutocompleteProductos[term]);
+                return;
+            }
+            $.getJSON('<?=$this->Url->build('/ajax/autocomplete-productos/')?>', search, function(data, status, xhr) {
+                cacheAutocompleteProductos[term] = data;
+                response(data);
+            });
+        },
+        select: function(event , ui){
+            if (ui.item){
+                console.log(ui.item);
+                $("#autocompleteProductosId").val(ui.item.id);
+                $("#nombreProductoCliente").val(ui.item.nombre).prop('disabled', false);
+            }
+        },
+        change: function(event, ui){
+            if (!ui.item){
+                $("#autocompleteProductos").val('');
+                $("#autocompleteProductosId").val('');
+                $("#nombreProductoCliente").val('').prop('disabled', true);
+            }
+        }
+    }); 
 
 <?php $this->end(); ?>
-
 </script>
 
 <div class="row">
@@ -67,3 +88,11 @@ $this->assign('modal_size', 'modal-lg');
         ])?>
     </div>
 </div>
+
+<!-- Nombre Producto Cliente -->
+<?=$this->Form->control('nombre', [
+    'id' => 'nombreProductoCliente',
+    'class' => 'form-control form-control-sm', 'required' => true, 'disabled' => true,
+    'label' => __('Nombre'),
+    'placeholder' => __('Seleccione Producto'),
+])?>

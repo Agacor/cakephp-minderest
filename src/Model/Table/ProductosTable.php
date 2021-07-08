@@ -131,6 +131,8 @@ class ProductosTable extends Table
             $alias."__id" => "$alias.id",
             $alias."__label" => "CONCAT('[', $alias.mpn, '] ', $alias.nombre)",
             $alias."__value" => "CONCAT('[', $alias.mpn, '] ', $alias.nombre)",
+            $alias."__mpn" => "$alias.mpn",
+            $alias."__nombre" => "$alias.nombre",
         ]);
         // Término de Búsqueda
         if (!empty($options['search'])) {

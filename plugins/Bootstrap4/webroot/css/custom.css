@@ -17,3 +17,12 @@
     color: red;
     content: "*";
 }
+
+
+/*********************************
+    JQUERY UI
+**********************************/
+
+.ui-widget.ui-widget-content {
+    z-index: 1200;
+}
