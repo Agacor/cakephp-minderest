@@ -30,7 +30,11 @@
                     <td class="text-right"><?=$producto->total_clientes ?: '0'?></td>
                     <td><?=$producto->created?></td>
                     <td class="text-center">
-                        <?=__('ver')?> | <?=__('editar')?> | <?=__('eliminar')?>
+                        <?=$this->Html->modalLink(__('ver'), "/productos/modal-view/$producto->id")?> | 
+                        <?=$this->Html->modalLink(__('editar'), "/productos/modal-edit/$producto->id")?> | 
+                        <?=$this->Html->link(__('eliminar'), "/productos/delete/$producto->id", [
+                            'confirm' => __('Seguro que desea Eliminar el Producto {0}', $producto->display),
+                        ])?>
                     </td>
                 </tr>
 

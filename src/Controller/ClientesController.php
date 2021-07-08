@@ -8,6 +8,8 @@ class ClientesController extends AppController
     
     public function initialize(): void
     {
+        parent::initialize();
+        
         $this->set('pageHeader', __('Clientes'));
         $this->set('sidebarMenu', 'Clientes');
     }

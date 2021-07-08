@@ -1,13 +1,15 @@
 <?php
 namespace Bootstrap4\View;
 
-use Cake\View\View;
+use App\View\AppView as BaseAppView;
 
-class AppView extends View
+class AppView extends BaseAppView
 {
 
     public function initialize(): void
     {
+        parent::initialize();
+        
         // Form
         $this->Form->setTemplates([
             'inputContainer' => '<div class="form-group input {{type}}{{required}}">{{content}}</div>',

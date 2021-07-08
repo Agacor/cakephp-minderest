@@ -38,4 +38,16 @@ class Producto extends Entity
         'modified' => true,
         'clientes' => true,
     ];
+
+    protected $_virtual = ['display'];
+    
+    // Virtual Fields
+    protected function _getDisplay()
+    {
+        if (isset($this->nombre)) {
+            return (!empty($this->mpn)) ? "[".$this->mpn."] ".$this->nombre : $this->nombre;    
+        }
+        return NULL;
+    }
+
 }

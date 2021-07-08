@@ -1,10 +1,10 @@
 <?php 
-$this->assign('title', __('Añadir Producto'));
+$this->assign('title', __('Editar Producto'));
 ?>
 
 <?php $this->start('modal_form'); ?>
-    <?= $this->Form->create(null, [
-        'id'=>'formModalAddProducto', 'url' => "", 'type' => 'post', 'class'=>"needs-validation", 
+    <?= $this->Form->create($producto, [
+        'id'=>'formModalEditarProducto', 'url' => "", 'type' => 'post', 'class'=>"needs-validation", 
         'autocomplete'=>'off', 'data-boxloader' => 'true',
     ]);?>
 <?php $this->end(); ?>

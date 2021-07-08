@@ -51,13 +51,13 @@ class ProductosClientesTable extends Table
         // [ORM]
         $this->belongsTo('Producto', [
             'propertyName' => 'Producto',
-            'className' => 'Producto',
+            'className' => 'Productos',
             'foreignKey' => 'producto_id',
             'joinType' => 'INNER',
         ]);
         $this->belongsTo('Cliente', [
             'propertyName' => 'Cliente',
-            'className' => 'Cliente',
+            'className' => 'Clientes',
             'foreignKey' => 'cliente_id',
             'joinType' => 'INNER',
         ]);
