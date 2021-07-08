@@ -16,9 +16,9 @@
         </div>
         <!-- Modal Footer -->
         <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal"><?= __('Cerrar') ?></button>
-            <button type="reset" class="btn btn-secondary"><?= __('Restablecer') ?></button>
-            <button type="submit" class="btn btn-primary"><?= __('Enviar') ?></button>
+            <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal"><?= __('Cerrar') ?></button>
+            <button type="reset" class="btn btn-sm btn-secondary"><?= __('Restablecer') ?></button>
+            <button type="submit" class="btn btn-sm btn-primary"><?= __('Enviar') ?></button>
         </div>
         <?= $this->Form->end() ?>
     </div>

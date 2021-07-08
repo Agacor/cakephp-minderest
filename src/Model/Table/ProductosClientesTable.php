@@ -93,8 +93,8 @@ class ProductosClientesTable extends Table
      */
     public function buildRules(RulesChecker $rules): RulesChecker
     {
-        $rules->add($rules->existsIn(['producto_id'], 'Productos'), ['errorField' => 'producto_id']);
-        $rules->add($rules->existsIn(['cliente_id'], 'Clientes'), ['errorField' => 'cliente_id']);
+        $rules->add($rules->existsIn(['producto_id'], 'Producto'), ['errorField' => 'producto_id']);
+        $rules->add($rules->existsIn(['cliente_id'], 'Cliente'), ['errorField' => 'cliente_id']);
         $rules->add($rules->isUnique(['producto_id', 'cliente_id'], __('El producto ya existe.')));
         $rules->add($rules->isUnique(['cliente_id', 'nombre'], __('El nombre del producto ya existe.')));
 

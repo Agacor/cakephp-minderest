@@ -25,7 +25,7 @@
                     <td><?=$cliente->id?></td>
                     <td><?=$cliente->nif?></td>
                     <td><?=$cliente->nombre?></td>
-                    <td class="text-right"><?=$cliente->total_productos ?: 0?></td>
+                    <td class="text-right"><?=$cliente->ProductosPropios[0]->total ?? '0'?></td>
                     <td class="text-center">
                         <?=$this->Html->modalLink(__('ver'), "/clientes/modal-view/$cliente->id")?> | 
                         <?=$this->Html->modalLink(__('vincular productos'), "/clientes/modal-vincular-productos/$cliente->id")?>

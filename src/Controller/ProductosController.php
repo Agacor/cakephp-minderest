@@ -18,7 +18,19 @@ class ProductosController extends AppController
     public function index()
     {
         $this->loadModel('Productos');
-        $productos = $this->Productos->find();
+        $productos = $this->Productos->find()
+            ->contain([
+                'ProductosClientes' => function ($q){
+                    $q->select([
+                        'ProductosClientes.producto_id',
+                        'total' => $q->func()->count('ProductosClientes.producto_id')
+                    ])
+                    ->group([
+                        'ProductosClientes.producto_id', 
+                    ]);
+                    return $q;
+                },
+            ]);
 
         $this->set(compact('productos'));
     }

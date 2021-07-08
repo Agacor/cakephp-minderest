@@ -78,7 +78,11 @@ class ProductosTable extends Table
             ->maxLength('mpn', 255)
             ->requirePresence('mpn', 'create')
             ->notEmptyString('mpn')
-            ->add('mpn', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+            ->add('mpn', 'unique', [
+                'rule' => 'validateUnique', 
+                'provider' => 'table',
+                'message' => __('El Manufacturer Part Number debe ser único.'),
+            ]);
 
         $validator
             ->scalar('nombre')
@@ -108,7 +112,7 @@ class ProductosTable extends Table
      */
     public function buildRules(RulesChecker $rules): RulesChecker
     {
-        $rules->add($rules->isUnique(['mpn']), ['errorField' => 'mpn']);
+        $rules->add($rules->isUnique(['mpn'], __('El Manufacturer Part Number debe ser único.')));
 
         return $rules;
     }

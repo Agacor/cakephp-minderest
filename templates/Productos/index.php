@@ -11,7 +11,6 @@
                 <th>#</th>
                 <th><?=__('Manufacturer P/N')?></th>
                 <th><?=__('Nombre')?></th>
-                <!-- <th><?=__('Descripción')?></th> -->
                 <th class="text-right">&sum; <?=__('Productos Clientes')?></th>
                 <th class="text-center">
                     <?=__('Acciones')?>
@@ -25,8 +24,7 @@
                     <td><?=$producto->id?></td>
                     <td><?=$producto->mpn?></td>
                     <td><?=$producto->nombre?></td>
-                    <!-- <td><?=$producto->descripcion?></td> -->
-                    <td class="text-right"><?=$producto->total_clientes ?: '0'?></td>
+                    <td class="text-right"><?=$producto->ProductosClientes[0]->total ?? '0'?></td>
                     <td class="text-center">
                         <?=$this->Html->modalLink(__('ver'), "/productos/modal-view/$producto->id")?> | 
                         <?=$this->Html->modalLink(__('editar'), "/productos/modal-edit/$producto->id")?> | 

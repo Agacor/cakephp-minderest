@@ -10,7 +10,7 @@ $this->assign('modal_size', 'modal-lg');
         </li>
         <li class="nav-item">
             <a href="#tab_cliente_productos"  class="nav-link" data-toggle="tab">
-                <?= __('Productos Cliente')?>
+                <?= __('Productos Propios')?>
             </a>
         </li>
     </ul>
@@ -23,14 +23,14 @@ $this->assign('modal_size', 'modal-lg');
         <!-- Productos Relacionados -->
         <div class="tab-pane p-2" id="tab_cliente_productos">
            
-            <?php if(!empty($cliente['ProductosClientes'])) : ?>
+            <?php if(!empty($cliente['ProductosPropios'])) : ?>
                 <!-- Productos Clientes -->
                 <div class="table-responsive">
                     <table class="table table-striped table-sm">
                         <thead>
                             <tr>
-                                <th><?=__('Nombre')?></th>
-                                <th><?=__('Cliente')?></th>
+                                <th><?=__('MPN')?></th>
+                                <th><?=__('Nombre')?></th>    
                                 <th><?=__('Fª Alta')?></th>
                                 <th class="text-center">
                                     <?=__('Acciones')?>
@@ -38,10 +38,10 @@ $this->assign('modal_size', 'modal-lg');
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach($producto['ProductosClientes'] as $productoCliente): ?>
+                            <?php foreach($cliente['ProductosPropios'] as $productoCliente): ?>
                                 <tr>
+                                    <td><?=$productoCliente->Producto->mpn?></td>
                                     <td><?=$productoCliente->nombre?></td>
-                                    <td><?=$productoCliente->Cliente->display?></td>
                                     <td><?=$productoCliente->created?></td>
                                     <td class="text-center">
                                         <?=$this->Html->link(__('eliminar'), "/productos-clientes/delete/$productoCliente->id", [

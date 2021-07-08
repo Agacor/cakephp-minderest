@@ -18,18 +18,28 @@ class ClientesController extends AppController
     public function index()
     {
         $this->loadModel('Clientes');
-        $clientes = $this->Clientes->find();
+        $clientes = $this->Clientes->find()
+            ->contain([
+                'ProductosPropios' => function ($q){
+                    $q->select([
+                        'ProductosPropios.cliente_id',
+                        'total' => $q->func()->count('ProductosPropios.cliente_id')
+                    ])
+                    ->group([
+                        'ProductosPropios.cliente_id', 
+                    ]);
+                    return $q;
+                },
+            ]);
 
         $this->set(compact('clientes'));
     }
 
 
-    // Modal Add
-    public function modalAdd()
-    {
-        $this->viewBuilder()->setLayout('modal_form');
-    }
-
+    /****************************
+     * VISTAS MODALES
+     ****************************/
+    
     // Modal View
     public function modalView($cliente_id)
     {        
@@ -52,9 +62,24 @@ class ClientesController extends AppController
         $this->viewBuilder()->setLayout('modal_form');
 
         $this->loadModel('Clientes');
-        $clientes = $this->Clientes->find('list');
-
         $cliente = !empty($cliente_id) ? $this->Clientes->get($cliente_id) : [];
+
+        if ($this->request->is('post')) {
+            $this->loadModel('ProductosClientes');
+            $entity = $this->ProductosClientes->newEntity($this->request->getData());
+
+            if ($this->ProductosClientes->save($entity)) {
+                $this->Flash->success(__('Producto Vinculado a Cliente.'));
+            } else {
+                $this->Flash->entityErrors($entity, ['params' => [
+                    'fallback' => __('No se pudo Vincular el Producto. Inténtelo de nuevo.'),
+                ]]);
+            }
+            return $this->redirect($this->referer());
+        }
+        
+        // Listado Clientes
+        $clientes = $this->Clientes->find('list');
 
         $this->set(compact('clientes', 'cliente'));
     }
