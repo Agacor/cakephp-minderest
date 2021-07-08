@@ -13,7 +13,6 @@
                 <th><?=__('Nombre')?></th>
                 <!-- <th><?=__('Descripción')?></th> -->
                 <th class="text-right">&sum; <?=__('Productos Clientes')?></th>
-                <th><?=__('Fª Alta')?></th>
                 <th class="text-center">
                     <?=__('Acciones')?>
                 </th>
@@ -28,7 +27,6 @@
                     <td><?=$producto->nombre?></td>
                     <!-- <td><?=$producto->descripcion?></td> -->
                     <td class="text-right"><?=$producto->total_clientes ?: '0'?></td>
-                    <td><?=$producto->created?></td>
                     <td class="text-center">
                         <?=$this->Html->modalLink(__('ver'), "/productos/modal-view/$producto->id")?> | 
                         <?=$this->Html->modalLink(__('editar'), "/productos/modal-edit/$producto->id")?> | 

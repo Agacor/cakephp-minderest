@@ -1,6 +1,17 @@
 <div class="table-responsive">
     <table class="table table-striped table-sm">
         <tr>
+            <th><?=__('Fª Alta')?></th>
+            <td><?=$producto->created->nice()?></td>
+            <th><?=__('Fª Última Modificación')?></th>
+            <td><?=$producto->modified->nice()?></td>
+        </tr>
+    </table>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+        <tr>
             <th><?=__('Manufacturer P/N')?></th>
             <td><?=$producto->mpn?></td>
         </tr>

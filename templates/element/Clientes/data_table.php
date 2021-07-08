@@ -1,6 +1,17 @@
 <div class="table-responsive">
     <table class="table table-striped table-sm">
         <tr>
+            <th><?=__('Fª Alta')?></th>
+            <td><?=$cliente->created->nice()?></td>
+            <th><?=__('Fª Última Modificación')?></th>
+            <td><?=$cliente->modified->nice()?></td>
+        </tr>
+    </table>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+        <tr>
             <th><?=__('NIF/CIF')?></th>
             <td><?=$cliente->nif?></td>
         </tr>
