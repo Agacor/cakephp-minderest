@@ -30,6 +30,7 @@
                     <td><?=$cliente->created?></td>
                     <td class="text-center">
                         <!-- <?=__('ver')?> | <?=__('editar')?> | <?=__('eliminar')?> -->
+                        <?=$this->Html->modalLink(__('ver'), "/clientes/modal-view/$cliente->id")?> | 
                         <?=$this->Html->modalLink(__('vincular productos'), "/clientes/modal-vincular-productos/$cliente->id")?>
                     </td>
                 </tr>

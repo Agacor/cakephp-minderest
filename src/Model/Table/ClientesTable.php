@@ -48,6 +48,12 @@ class ClientesTable extends Table
         $this->addBehavior('Timestamp');
 
         // [ORM]
+        $this->hasMany('ProductosPropios', [
+            'propertyName' => 'ProductosPropios',
+            'className' => 'ProductosClientes',
+            'foreignKey' => 'cliente_id',
+        ]);
+
         $this->belongsToMany('Productos', [
             'foreignKey' => 'cliente_id',
             'targetForeignKey' => 'producto_id',

@@ -1,5 +1,5 @@
 <?php 
-$this->assign('title', __('Minderest'));
+$this->assign('title', __('PHP Minderest'));
 $this->set('pageHeader', __('PHP Minderest'));
 ?>
 

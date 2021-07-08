@@ -30,6 +30,22 @@ class ClientesController extends AppController
         $this->viewBuilder()->setLayout('modal_form');
     }
 
+    // Modal View
+    public function modalView($cliente_id)
+    {        
+        $this->viewBuilder()->setLayout('modal_tabs');     
+        
+        $this->loadModel('Clientes');
+        $cliente = $this->Clientes->get($cliente_id, [
+            'contain' => [
+                'ProductosPropios',
+                'ProductosPropios.Producto',
+            ],
+        ]);
+        
+        $this->set(compact('cliente'));
+    }
+    
     // Modal Vincular Productos
     public function modalVincularProductos($cliente_id = null)
     {
