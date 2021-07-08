@@ -38,7 +38,9 @@ class ClientesController extends AppController
         $this->loadModel('Clientes');
         $clientes = $this->Clientes->find('list');
 
-        $this->set(compact('clientes'));
+        $cliente = !empty($cliente_id) ? $this->Clientes->get($cliente_id) : [];
+
+        $this->set(compact('clientes', 'cliente'));
     }
     
 }

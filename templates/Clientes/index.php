@@ -29,7 +29,8 @@
                     <td class="text-right"><?=$cliente->total_productos?></td>
                     <td><?=$cliente->created?></td>
                     <td class="text-center">
-                        <?=__('ver')?> | <?=__('editar')?> | <?=__('eliminar')?>
+                        <!-- <?=__('ver')?> | <?=__('editar')?> | <?=__('eliminar')?> -->
+                        <?=$this->Html->modalLink(__('vincular productos'), "/clientes/modal-vincular-productos/$cliente->id")?>
                     </td>
                 </tr>
 

@@ -20,6 +20,7 @@ $this->assign('modal_size', 'modal-lg');
         $("#autocompleteProductosId").val('');
         // Toggle Disabled
         $("#autocompleteProductos").prop('disabled', (!$(this).val()));
+        $("#autocompleteProductos").attr('placeholder', '<?=__('Busque un producto')?>');
     });
 
     // var productos;
@@ -49,9 +50,10 @@ $this->assign('modal_size', 'modal-lg');
         <?=$this->Form->control('cliente_id', [
             'id' => 'selectClienteId',
             'type' => 'select', 'options' => $clientes,
-            'class' => 'form-control form-control-sm', 'required' => true,
+            'class' => 'form-control form-control-sm', 'required' => true, 'readonly' => !empty($cliente),
             'label' => __('Cliente'),
             'empty' => __('Seleccione Cliente'),
+            'value' => $cliente->id ?? '',
         ])?>
     </div>
     <div class="col-xs-12 col-md-8">
@@ -60,8 +62,8 @@ $this->assign('modal_size', 'modal-lg');
         <?=$this->Form->control('producto', [
             'id' => 'autocompleteProductos',
             'class' => 'form-control form-control-sm', 'required' => true,
-            'label' => __('Producto'), 'disabled' => true,
-            'placeholder' => __('Seleccione Cliente'),
+            'label' => __('Producto'), 'disabled' => empty($cliente),
+            'placeholder' => empty($cliente) ? __('Seleccione Cliente') : __('Busque un producto'),
         ])?>
     </div>
 </div>
