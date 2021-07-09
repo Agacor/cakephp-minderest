@@ -37,7 +37,7 @@ composer dumpautoload
 4. Create database called `minderest`
 
 ```bash
-mysql> CREATE DATABASE minderest;
+mysql> CREATE DATABASE minderest CHARACTER SET utf8 COLLATE utf8_spanish_ci;
 ```
 
 5. Create tables
