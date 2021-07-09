@@ -101,4 +101,41 @@ class ProductosClientesTable extends Table
         return $rules;
     }
 
+
+    /******************************
+     * CUSTOM FINDERS
+     ******************************/
+    
+    /**
+     * Custom Finder for Autocomplete
+     * @param \Cake\ORM\Query $query
+     * @param array $options
+     * @return \Cake\ORM\Query
+     */
+    public function findAutocomplete(\Cake\ORM\Query $query, array $options)
+    {
+        $alias = $this->getAlias();
+        $query
+            ->select([
+                $alias."__id" => "$alias.id",
+                $alias."__label" => "CONCAT('[', Producto.mpn, '] ', $alias.nombre)",
+                $alias."__value" => "CONCAT('[', Producto.mpn, '] ', $alias.nombre)",
+                $alias."__producto_id" => "$alias.producto_id",
+                $alias."__cliente_id" => "$alias.cliente_id",
+                $alias."__mpn" => "Producto.mpn",
+            ])
+            ->innerJoinWith('Producto');
+            
+        // Término de Búsqueda
+        if (!empty($options['search'])) {
+            $conditions = [];
+            $search_words = explode(' ', $options['search']);
+            foreach($search_words as $word) {
+                $conditions[]=["CONCAT('[', Producto.mpn, '] ', $alias.nombre) LIKE" => "%$word%"];
+            }
+            $query->where($conditions);
+        }
+        return $query;
+    }
+
 }

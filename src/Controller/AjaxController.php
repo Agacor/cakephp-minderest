@@ -41,6 +41,22 @@ class AjaxController extends AppController
         $this->viewBuilder()->setOption('serialize', 'productos');
     }
 
+    // Autocomplete Productos Clientes
+    public function autocompleteProductosClientes($cliente_id = null)
+    {
+        $conditions = !empty($cliente_id) ? ['cliente_id' => $cliente_id] : [];
+
+        $this->loadModel('ProductosClientes');
+        $productos = $this->ProductosClientes
+            ->find('autocomplete', [
+                'search'=>$this->request->getQuery('search', '')
+            ])
+            ->where($conditions);
+
+        $this->set(compact('productos'));
+        $this->viewBuilder()->setOption('serialize', 'productos');
+    }
+
     // Search Related Products
     public function searchRelatedProducts($producto_cliente_id)
     {
