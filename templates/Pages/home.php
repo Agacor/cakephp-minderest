@@ -23,6 +23,58 @@ $this->set('pageHeader', __('PHP Minderest'));
     
     <p>Cuando se dé de alta un nuevo registro de <b>productos_clientes</b> que no esté registrado en la tabla <b>productos</b> de Minderest, se ceará automáticamente un registro con los datos del cliente en la tabla <b>productos</b> (Minderest puede posteriormente modificar los datos de sus productos, respetándose los datos que introdujo el cliente). En la aplicación los productos se crearán siempre a través de un cliente.</p>
 
+    
+    <h2><?=__('AjaxController')?></h2>
+
+    <p>Para facilitar las llamadas AJAX, he creado un controlador específico para realizar las distintas llamadas. Estas llamadas aceptan el parametro ?search para filtrar los resultados.<p>
+        
+    <ul>
+        <li>
+            <?=$this->Html->link('/ajax/autocomplete-clientes', '/ajax/autocomplete-clientes')?>
+        </li>
+        <li>
+            <?=$this->Html->link('/ajax/autocomplete-productos', '/ajax/autocomplete-productos')?>
+        </li>
+        <li>
+            <?=$this->Html->link('/ajax/autocomplete-productos-clientes', '/ajax/autocomplete-productos-clientes')?>
+        </li>
+        <!-- <li>
+            <?=$this->Html->link('/ajax/search-related-products/{id}', '/ajax/search-related-products/1')?>
+        </li> -->
+    </ul>
+
+    <h2><?=__('Theme')?></h2>
+    <p>Para el diseño de las vistas, he creado un <a href="https://book.cakephp.org/4/en/views/themes.html" target="_blank">Theme de CakePHP4</a> adaptando una plantilla de ejemplo de Bootstrap 4.6.</p>
+
+    <div class="highlight">
+        <pre class="chroma mt-0"><code class="language-text" data-lang="text">
+cakephp-minderest/
+└── plugins/
+    └── Bootstrap4
+        ├── src
+        │   ├── ...
+        ├── templates
+        │   ├── element
+        │   │   ├── content
+        │   │   │   └── header.php
+        │   │   └── flash
+        │   │       ├── error.php
+        │   │       └── success.php
+        │   └── layout
+        │       ├── default.php
+        │       ├── modal_form.php
+        │       ├── modal_tabs.php
+        │       └── modal.php
+        └── webroot
+            ├── css
+            │   ├── custom.css
+            │   └── dashboard.css
+            ├── js
+            │   ├── app.js
+            │   └── dashboard.js
+            └── plugins
+                ├── ...</code></pre>
+    </div>
 
     <h2><?=__('Pasos Posteriores')?></h2>
 

@@ -9,7 +9,7 @@
         </div>
         <div class="modal-footer">
             <?= $this->fetch('modal_footer') ?>
-            <span class="pull-left"><b>Empresa S.L. &copy; <?=date('Y')?></b></span>
+            <span class="pull-left"><b>Minderest S.L. &copy; <?=date('Y')?></b></span>
         </div>
         
     </div>
