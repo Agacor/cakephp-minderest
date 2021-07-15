@@ -76,18 +76,18 @@ $this->assign('modal_size', 'modal-lg');
                     <table class="table table-striped table-sm">
                         <thead>
                             <tr>
+                                <th><?=__('Cliente')?></th> 
                                 <th><?=__('MPN')?></th>
                                 <th><?=__('Nombre')?></th>    
-                                <th><?=__('Cliente')?></th>    
                                 <th><?=__('Fª Alta')?></th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach($productosCompetencia as $productoCompetencia): ?>
                                 <tr>
+                                    <td><?=$productoCompetencia->Cliente->display?></td>
                                     <td><?=$productoCompetencia->Producto->mpn?></td>
                                     <td><?=$productoCompetencia->nombre?></td>
-                                    <td><?=$productoCompetencia->Cliente->display?></td>
                                     <td><?=$productoCompetencia->created?></td>
                                 </tr>
                             <?php endforeach;?>

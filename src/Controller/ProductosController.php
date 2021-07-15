@@ -121,8 +121,10 @@ class ProductosController extends AppController
         $this->loadModel('Productos');
         $producto = $this->Productos->get($producto_id, [
             'contain' => [
-                'ProductosClientes',
-                'ProductosClientes.Cliente',
+                'ProductosClientes' => function($q){
+                    return $q->contain('Cliente')->order('Cliente.nombre');
+                } ,
+
             ],
         ]);
         

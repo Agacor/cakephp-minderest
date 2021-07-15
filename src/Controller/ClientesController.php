@@ -48,7 +48,7 @@ class ClientesController extends AppController
         $this->loadModel('Clientes');
         $cliente = $this->Clientes->get($cliente_id, [
             'contain' => [
-                'ProductosPropios',
+                'ProductosPropios' => ['sort' => 'ProductosPropios.nombre'],
                 'ProductosPropios.Producto',
             ],
         ]);
@@ -62,9 +62,10 @@ class ClientesController extends AppController
                     'Cliente', 'Producto',
                 ])
                 ->where([
-                    'producto_id IN' => $cliente['productosPropiosIds'],
                     'cliente_id !=' => $cliente_id,
-                ]);
+                    'producto_id IN' => $cliente['productosPropiosIds'],    // ATENCIÓN: VirtualField \App\Model\Entity\Cliente
+                ])
+                ->order(['Cliente.nombre', 'ProductosClientes.nombre']);
         }
        
         $this->set(compact('cliente', 'productosCompetencia'));
