@@ -14,6 +14,21 @@ class ProductosClientesController extends AppController
         $this->set('sidebarMenu', 'ProductosClientes');
     }
 
+    // Index
+    public function index()
+    {
+        $this->loadModel('ProductosClientes');
+        $productosClientes = $this->ProductosClientes->find()
+            ->contain([
+                'Cliente', 'Producto',
+            ])
+            ->order([
+                'Cliente.nombre', 'ProductosClientes.nombre'
+            ]);
+
+        $this->set(compact('productosClientes'));
+    }
+
 
     /*********************************
      * ENTITY ACTIONS

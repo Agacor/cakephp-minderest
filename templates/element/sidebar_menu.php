@@ -11,6 +11,13 @@
             'class' => ($sidebarMenu==='Productos') ? 'nav-link active' : 'nav-link',
         ])?>
     </li>
+    <!-- Productos Clientes-->
+    <li class="nav-item">
+        <?=$this->Html->link(__('Productos Clientes'), '/productos-clientes', [
+            'class' => ($sidebarMenu==='ProductosClientes') ? 'nav-link active' : 'nav-link',
+        ])?>
+    </li>
+
     <!-- Vincular Productos-->
     <li class="nav-item">
         <?=$this->Html->modalLink(__('Vincular Productos'), '/clientes/modal-vincular-productos', [
