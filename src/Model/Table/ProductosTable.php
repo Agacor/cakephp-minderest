@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace App\Model\Table;
 
-use Cake\ORM\Query;
+use App\Model\Table\AppTable;
+
 use Cake\ORM\RulesChecker;
-use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
@@ -29,7 +29,7 @@ use Cake\Validation\Validator;
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class ProductosTable extends Table
+class ProductosTable extends AppTable
 {
     /**
      * Initialize method
@@ -42,10 +42,7 @@ class ProductosTable extends Table
         parent::initialize($config);
 
         $this->setTable('productos');
-        $this->setDisplayField('id');
-
-        // [BEHAVIORS]
-        $this->addBehavior('Timestamp');
+        $this->setDisplayField('display');
 
         // [ORM]
         $this->hasMany('ProductosClientes', [

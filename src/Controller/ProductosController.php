@@ -18,7 +18,11 @@ class ProductosController extends AppController
     public function index()
     {
         $this->loadModel('Productos');
-        $productos = $this->Productos->find()
+        $productos = $this->Productos
+            ->find('searchWords', [
+                'search' => $this->request->getQuery('search'),
+                'columns' => ['mpn', 'nombre'],
+            ])
             ->contain([
                 'ProductosClientes' => function ($q){
                     $q->select([

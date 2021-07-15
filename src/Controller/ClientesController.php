@@ -18,7 +18,11 @@ class ClientesController extends AppController
     public function index()
     {
         $this->loadModel('Clientes');
-        $clientes = $this->Clientes->find()
+        $clientes = $this->Clientes
+            ->find('searchWords', [
+                'search' => $this->request->getQuery('search'),
+                'columns' => ['Clientes.nif', 'nombre'],
+            ])
             ->contain([
                 'ProductosPropios' => function ($q){
                     $q->select([
