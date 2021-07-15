@@ -21,8 +21,12 @@
             <?php foreach($productosClientes as $productoCliente): ?>
 
                 <tr>
-                    <td><?=$productoCliente->Cliente->display?></td>
-                    <td><?=$productoCliente->Producto->mpn?></td>
+                    <td>
+                        <?=$this->Html->modalLink($productoCliente->Cliente->display, "/clientes/modal-view/".$productoCliente->Cliente->id)?>
+                    </td>
+                    <td>
+                        <?=$this->Html->modalLink($productoCliente->Producto->mpn, "/productos/modal-view/".$productoCliente->Producto->id)?>
+                    </td>
                     <td><?=$productoCliente->nombre?></td>
                     <td><?=$productoCliente->created?></td>
                     <td class="text-center">
