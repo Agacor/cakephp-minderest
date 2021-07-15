@@ -271,13 +271,13 @@
             
             switch (xhr.status) {
                 case 500:   // Server Error
-                    loadModal(baseURL + "app/error/modal500", {show:true});
+                    loadModal(baseURL + "error/modal500", {show:true});
                     break;
                     
                 case 400:
                 case 401:   // Unauthorized
                 case 404:   //Not Found
-                    loadModal(baseURL + "app/error/modal400", {show:true});
+                    loadModal(baseURL + "error/modal400", {show:true});
                     break;
                     
                 default:

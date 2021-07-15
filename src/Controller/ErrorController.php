@@ -67,4 +67,17 @@ class ErrorController extends AppController
     public function afterFilter(EventInterface $event)
     {
     }
+
+    // Error Modal 400
+    public function modal400()
+    {
+        $this->viewBuilder()->setLayout('modal');
+    }
+    
+    // Error Modal 500
+    public function modal500()
+    {
+        $this->viewBuilder()->setLayout('modal');
+    }
+    
 }
