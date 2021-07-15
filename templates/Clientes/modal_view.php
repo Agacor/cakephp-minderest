@@ -13,6 +13,11 @@ $this->assign('modal_size', 'modal-lg');
                 <?= __('Productos Propios')?>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="#tab_cliente_productos_competencia"  class="nav-link" data-toggle="tab">
+                <?= __('Productos Competencia')?>
+            </a>
+        </li>
     </ul>
     <div class="tab-content">
         <!-- Producto -->
@@ -20,11 +25,11 @@ $this->assign('modal_size', 'modal-lg');
            <?=$this->element('Clientes/data_table')?>
         </div>
 
-        <!-- Productos Relacionados -->
+        <!-- Productos Propios -->
         <div class="tab-pane p-2" id="tab_cliente_productos">
            
             <?php if(!empty($cliente['ProductosPropios'])) : ?>
-                <!-- Productos Clientes -->
+                <!-- Productos Propios -->
                 <div class="table-responsive">
                     <table class="table table-striped table-sm">
                         <thead>
@@ -57,6 +62,42 @@ $this->assign('modal_size', 'modal-lg');
             <?php else: ?>
                 <div class="alert alert-info">
                     <?=__('Este cliente no tiene ningún producto.')?>
+                </div>
+            <?php endif; ?>
+
+        </div>
+
+        <!-- Productos Competencia -->
+        <div class="tab-pane p-2" id="tab_cliente_productos_competencia">
+           
+            <?php if (!empty($productosCompetencia)) : ?>
+                <!-- Productos Competencia -->
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th><?=__('MPN')?></th>
+                                <th><?=__('Nombre')?></th>    
+                                <th><?=__('Cliente')?></th>    
+                                <th><?=__('Fª Alta')?></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($productosCompetencia as $productoCompetencia): ?>
+                                <tr>
+                                    <td><?=$productoCompetencia->Producto->mpn?></td>
+                                    <td><?=$productoCompetencia->nombre?></td>
+                                    <td><?=$productoCompetencia->Cliente->display?></td>
+                                    <td><?=$productoCompetencia->created?></td>
+                                </tr>
+                            <?php endforeach;?>
+                        </tbody>
+                    </table>
+                </div>
+
+            <?php else: ?>
+                <div class="alert alert-info">
+                    <?=__('Este cliente no tiene ningún producto compartido con los demás clientes.')?>
                 </div>
             <?php endif; ?>
 

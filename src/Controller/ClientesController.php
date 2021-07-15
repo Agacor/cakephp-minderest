@@ -52,8 +52,22 @@ class ClientesController extends AppController
                 'ProductosPropios.Producto',
             ],
         ]);
-        
-        $this->set(compact('cliente'));
+
+        // Productos Competencia
+        $productosCompetencia = [];
+        if (!empty($cliente['productosPropiosIds'])) {
+            $this->loadModel('ProductosClientes');
+            $productosCompetencia = $this->ProductosClientes->find()
+                ->contain([
+                    'Cliente', 'Producto',
+                ])
+                ->where([
+                    'producto_id IN' => $cliente['productosPropiosIds'],
+                    'cliente_id !=' => $cliente_id,
+                ]);
+        }
+       
+        $this->set(compact('cliente', 'productosCompetencia'));
     }
     
     // Modal Vincular Productos

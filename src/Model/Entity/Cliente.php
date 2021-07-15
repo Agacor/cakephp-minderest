@@ -37,13 +37,20 @@ class Cliente extends Entity
         'productos' => true,
     ];
 
-    protected $_virtual = ['display'];
+    protected $_virtual = ['display', 'productosPropiosIds'];
     
     // Virtual Fields
     protected function _getDisplay()
     {
         if (isset($this->nombre)) {
             return (!empty($this->nif)) ? "[".$this->nif."] ".$this->nombre : $this->nombre;    
+        }
+        return NULL;
+    }
+    protected function _getProductosPropiosIds()
+    {
+        if (isset($this->ProductosPropios)) {
+            return array_column($this->ProductosPropios, 'producto_id');
         }
         return NULL;
     }
