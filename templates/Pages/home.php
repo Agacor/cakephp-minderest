@@ -60,6 +60,11 @@ cakephp-minderest/
         │   │   └── flash
         │   │       ├── error.php
         │   │       └── success.php
+        │   ├── Error
+        │   │   ├── error400.php
+        │   │   ├── error500.php
+        │   │   ├── modal400.php
+        │   │   └── modal500.php
         │   └── layout
         │       ├── default.php
         │       ├── modal_form.php
