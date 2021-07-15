@@ -42,7 +42,11 @@
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <input class="form-control form-control-dark w-100" type="text" placeholder="Buscar..." aria-label="Search">
+        <?=$this->Form->input('search', [
+            'id' => 'navbarSearchInput', 'class' => 'form-control form-control-dark w-100', 
+            'placeholder' => __('Buscar...'), 'aria-label' => __('Buscar'),
+            'value' => $this->getRequest()->getQuery('search'),
+        ])?>
     </nav>
     <!--- Container -->
     <div class="container-fluid">
@@ -99,6 +103,16 @@
     <script>
         AppJS.setBaseURL("<?=$this->Url->build('/')?>");
         AppJS.setCsrfToken("<?=$this->request->getAttribute('csrfToken')?>");
+        
+        // NavBar Search
+        $('#navbarSearchInput').keyup(function(event) {
+            if (event.which === 13)
+            {
+                event.preventDefault();
+                window.location.href=AppJS.baseURL.slice(0, -1)+'<?=$this->getRequest()->getPath()?>?search='+this.value;
+            }
+        });
+        
     </script>
     
     <?= $this->fetch('scriptBottom') ?>
