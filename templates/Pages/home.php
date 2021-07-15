@@ -81,9 +81,78 @@ cakephp-minderest/
                 ├── ...</code></pre>
     </div>
 
+    <h2><?=__('MVC')?></h2>
+
+    <p>La aplicación ha sido construida usando la última versión de CakePHP 4. Los archivos más destacados del proyecto se pueden encontrar en:</p>
+
+    <div class="highlight">
+        <pre class="chroma mt-0"><code class="language-text" data-lang="text">
+cakephp-minderest/
+├── src/
+│   ├── ...
+│   ├── Controller
+│   │   ├── AjaxController.php
+│   │   ├── AppController.php
+│   │   ├── ClientesController.php
+│   │   ├── ErrorController.php
+│   │   ├── PagesController.php
+│   │   ├── ProductosClientesController.php
+│   │   └── ProductosController.php
+│   ├── Model
+│   │   ├── ...
+│   │   ├── Entity
+│   │   │   ├── Cliente.php
+│   │   │   ├── Producto.php
+│   │   │   └── ProductoCliente.php
+│   │   └── Table
+│   │       ├── AppTable.php
+│   │       ├── ClientesTable.php
+│   │       ├── ProductosClientesTable.php
+│   │       └── ProductosTable.php
+│   ├── View
+│   │   ├── ...
+│   │   ├── Helper
+│   │   │   └── MyHtmlHelper.php
+│   │   ├── AjaxView.php
+│   │   └── AppView.php
+│   └── Application.php
+│
+├── templates
+├── ...
+│   ├── Clientes
+│   │   ├── index.php
+│   │   ├── modal_add.php
+│   │   ├── modal_view.php
+│   │   └── modal_vincular_productos.php
+│   ├── element
+│   │   ├── Clientes
+│   │   │   └── data_table.php
+│   │   ├── flash
+│   │   │   ├── ...
+│   │   ├── Productos
+│   │   │   └── data_table.php
+│   │   └── sidebar_menu.php
+│   ├── Pages
+│   │   └── home.php
+│   ├── Productos
+│   │   ├── index.php
+│   │   ├── modal_add.php
+│   │   ├── modal_edit.php
+│   │   └── modal_view.php
+│   └── ProductosClientes
+│       └── index.php
+└── webroot
+    ├── ...
+    ├── img
+    │   ├── eer-minderest.png
+    │   ├── logo_Minderest_ront.svg
+    │   └── minderest.logo.svg
+    ├── ...</code></pre>
+    </div>
+
     <h2><?=__('Pasos Posteriores')?></h2>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel dapibus massa. Nam velit metus, commodo non orci at, vehicula tristique turpis. Nulla facilisi. Nunc vitae eros risus. Phasellus vestibulum nisi purus, a efficitur sem pellentesque vel. Nunc gravida, tellus vel dictum pharetra, dolor nulla suscipit risus, non pharetra mi urna iaculis metus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec eu ex aliquam, mollis lacus a, semper urna. Phasellus vehicula molestie metus, vitae pharetra ex varius a. Suspendisse tincidunt orci sed tempor tristique. Fusce ut molestie lacus. Praesent ipsum elit, dapibus sollicitudin lobortis eu, suscipit id felis.</p>
+    <p>La aplicación puede ser facilmente internacionalizada y localizada. Cakephp dispone de una utilidad en la consola para generar todos los archivos de traducción (*.po files).</p>
 
     <h2><?=__('Tecnologías usadas')?></h2>
 
