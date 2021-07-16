@@ -11,22 +11,20 @@ $this->set('pageHeader', __('PHP Minderest'));
         'class' => 'img-fluid',
     ])?>
 
-    <p>En el supuesto Minderest tiene una tabla de <b>productos</b> y otra de <b>clientes</b>.</p>
+    <p><?=__('En el supuesto Minderest tiene una tabla de <b>productos</b> y otra de <b>clientes</b>.')?></p>
 
-    <p>Los productos de Minderest se pueden relacionar con muchos clientes a traves de la tabla <b>productos_clientes</b>.</p>
+    <p><?=__('Los productos de Minderest se pueden relacionar con muchos clientes a traves de la tabla <b>productos_clientes</b>.')?></p>
     
-    <p>Los clientes no se pueden relacionar más de una vez con el mismo producto.</p>
+    <p><?=__('Los clientes no se pueden relacionar más de una vez con el mismo producto.')?></p>
     
-    <p>Los clientes pueden definir (o sobreescribir) los atributos de un producto (nombre, precio, codigo, etc...) en la tabla productos_clientes.</p>
+    <p><?=__('Los clientes pueden definir (o sobreescribir) los atributos de un producto (nombre, precio, codigo, etc...) en la tabla productos_clientes.')?></p>
 
-    <p>Puede considerarse un índice <b>FULLTEXT</b> en la columna nombre (e incluso descripción) de los productos (y productos_clientes) para facilitar búsquedas basadas en un índice de relevancia (MATCH(nombre, descripcion, ...) AGAINST('searchString')...).</p>
+    <p><?=__("Puede considerarse un índice <b>FULLTEXT</b> en la columna nombre (e incluso descripción) de los productos (y productos_clientes) para facilitar búsquedas basadas en un índice de relevancia (MATCH(nombre, descripcion, ...) AGAINST('searchString')...).")?></p>
     
-    <p>Cuando se dé de alta un nuevo registro de <b>productos_clientes</b> que no esté registrado en la tabla <b>productos</b> de Minderest, se ceará automáticamente un registro con los datos del cliente en la tabla <b>productos</b> (Minderest puede posteriormente modificar los datos de sus productos, respetándose los datos que introdujo el cliente). En la aplicación los productos se crearán siempre a través de un cliente.</p>
-
     
     <h2><?=__('AjaxController')?></h2>
 
-    <p>Para facilitar las llamadas AJAX, he creado un controlador específico para realizar las distintas llamadas. Estas llamadas aceptan el parametro ?search para filtrar los resultados.<p>
+    <p><?=__('Para facilitar las llamadas AJAX, he creado un controlador específico para realizar las distintas llamadas. Estas llamadas aceptan el parametro ?search para filtrar los resultados.')?><p>
         
     <ul>
         <li>
@@ -44,13 +42,16 @@ $this->set('pageHeader', __('PHP Minderest'));
     </ul>
 
     <h2><?=__('Theme')?></h2>
-    <p>Para el diseño de las vistas, he creado un <a href="https://book.cakephp.org/4/en/views/themes.html" target="_blank">Theme de CakePHP4</a> adaptando una plantilla de ejemplo de Bootstrap 4.6.</p>
+    <p><?=__('Para el diseño de las vistas, he creado un <a href="https://book.cakephp.org/4/en/views/themes.html" target="_blank">Theme de CakePHP4</a> adaptando una plantilla de ejemplo de Bootstrap 4.6.')?></p>
 
     <div class="highlight">
-        <pre class="chroma mt-0"><code class="language-text" data-lang="text">
-cakephp-minderest/
+        <pre class="chroma mt-0"><code class="language-text" data-lang="text">cakephp-minderest/
 └── plugins/
     └── Bootstrap4
+        ├── resources/
+        │   └── locales
+        │       ├── cake.pot
+        │       └── default.pot
         ├── src
         │   ├── ...
         ├── templates
@@ -83,11 +84,26 @@ cakephp-minderest/
 
     <h2><?=__('MVC')?></h2>
 
-    <p>La aplicación ha sido construida usando la última versión de CakePHP 4. Los archivos más destacados del proyecto se pueden encontrar en:</p>
+    <p><?=__('La aplicación ha sido construida usando la última versión de CakePHP 4. Los archivos más destacados del proyecto se pueden encontrar en:')?></p>
 
     <div class="highlight">
-        <pre class="chroma mt-0"><code class="language-text" data-lang="text">
-cakephp-minderest/
+        <pre class="chroma mt-0"><code class="language-text" data-lang="text">cakephp-minderest/
+├── config/
+│   ├── Migrations
+│   │   └── 20210708014912_Initial.php
+│   ├── Seeds
+│   │   ├── ClientesSeed.php
+│   │   ├── DatabaseSeed.php
+│   │   └── ProductosSeed.php
+│   ├── app_local.php
+│   ├── app.php
+│   ├── bootstrap.php
+│   └── routes.php
+├── ...
+├── resources/
+│   └── locales
+│       ├── cake.pot
+│       └── default.pot
 ├── src/
 │   ├── ...
 │   ├── Controller
@@ -150,12 +166,15 @@ cakephp-minderest/
     ├── ...</code></pre>
     </div>
 
-    <h2><?=__('Pasos Posteriores')?></h2>
+    <h2><?=__('Siguientes Pasos')?></h2>
 
-    <p>La aplicación puede ser facilmente internacionalizada y localizada. Cakephp dispone de una utilidad en la consola para generar todos los archivos de traducción (*.po files).</p>
+    <p><?=__('La aplicación puede ser fácilmente internacionalizada y localizada. Cakephp dispone de una utilidad en la consola para generar todos los archivos de traducción (*.pot files) definidos a partir de las funciones <a href="https://www.php.net/manual/es/book.gettext.php" target="_blank">gettext</a> de PHP.')?></p>
 
-    <h2><?=__('Tecnologías usadas')?></h2>
+    <div class="highlight">
+        <pre class="chroma mt-0"><code class="language-text" data-lang="text">cakephp-minderest> bin/cake i18n extract
+cakephp-minderest> bin/cake i18n extract --plugin Bootstrap4</code></pre>
+    </div>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel dapibus massa. Nam velit metus, commodo non orci at, vehicula tristique turpis. Nulla facilisi. Nunc vitae eros risus. Phasellus vestibulum nisi purus, a efficitur sem pellentesque vel. Nunc gravida, tellus vel dictum pharetra, dolor nulla suscipit risus, non pharetra mi urna iaculis metus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec eu ex aliquam, mollis lacus a, semper urna. Phasellus vehicula molestie metus, vitae pharetra ex varius a. Suspendisse tincidunt orci sed tempor tristique. Fusce ut molestie lacus. Praesent ipsum elit, dapibus sollicitudin lobortis eu, suscipit id felis.</p>
+    <p><?=__('Los archivos generados se pueden consultar en /resources/locales/ y /plugins/Bootstrap4/resources/locales/ respectivamente.')?></p>
 
 </div>

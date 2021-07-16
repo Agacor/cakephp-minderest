@@ -1,0 +1,350 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2021-07-16 17:27+0200\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Controller/ClientesController.php:13
+#: element/sidebar_menu.php:8
+msgid "Clientes"
+msgstr ""
+
+#: Controller/ClientesController.php:91
+msgid "Producto Vinculado a Cliente."
+msgstr ""
+
+#: Controller/ClientesController.php:94
+msgid "No se pudo Vincular el Producto. Inténtelo de nuevo."
+msgstr ""
+
+#: Controller/ProductosClientesController.php:13
+#: Productos/index.php:14
+#: Productos/modal_view.php:13
+#: element/sidebar_menu.php:20
+msgid "Productos Clientes"
+msgstr ""
+
+#: Controller/ProductosClientesController.php:47
+msgid "Producto Cliente Eliminado."
+msgstr ""
+
+#: Controller/ProductosClientesController.php:50
+msgid "No se pudo ELIMINAR el Producto de Cliente. Inténtelo de nuevo."
+msgstr ""
+
+#: Controller/ProductosController.php:13
+#: Clientes/index.php:15
+#: element/sidebar_menu.php:14
+msgid "Productos"
+msgstr ""
+
+#: Controller/ProductosController.php:53
+msgid "Producto Eliminado."
+msgstr ""
+
+#: Controller/ProductosController.php:56
+msgid "No se pudo ELIMINAR el Producto. Inténtelo de nuevo."
+msgstr ""
+
+#: Controller/ProductosController.php:79
+msgid "Producto creado."
+msgstr ""
+
+#: Controller/ProductosController.php:82
+msgid "No se pudo crear el Producto. Inténtelo de nuevo."
+msgstr ""
+
+#: Controller/ProductosController.php:105
+msgid "Producto Actualizado."
+msgstr ""
+
+#: Controller/ProductosController.php:108
+msgid "No se pudo Editar el Producto. Inténtelo de nuevo."
+msgstr ""
+
+#: Model/Table/ProductosClientesTable.php:95
+msgid "El producto ya existe."
+msgstr ""
+
+#: Model/Table/ProductosClientesTable.php:96
+msgid "El nombre del producto ya existe."
+msgstr ""
+
+#: Model/Table/ProductosTable.php:81
+#: Model/Table/ProductosTable.php:112
+msgid "El Manufacturer Part Number debe ser único."
+msgstr ""
+
+#: Clientes/index.php:4
+#: ProductosClientes/index.php:3
+#: element/sidebar_menu.php:46
+msgid "Vincular Productos"
+msgstr ""
+
+#: Clientes/index.php:13
+#: Clientes/modal_add.php:17
+msgid "DNI/CIF"
+msgstr ""
+
+#: Clientes/index.php:14
+#: Clientes/modal_add.php:27
+#: Clientes/modal_view.php:38
+#: Clientes/modal_view.php:81
+#: Clientes/modal_vincular_productos.php:96
+#: ProductosClientes/index.php:13
+#: Productos/index.php:13
+#: Productos/modal_add.php:21
+#: Productos/modal_edit.php:21
+#: Productos/modal_view.php:33
+#: element/Clientes/data_table.php:19
+#: element/Productos/data_table.php:19
+msgid "Nombre"
+msgstr ""
+
+#: Clientes/index.php:17
+#: Clientes/modal_view.php:41
+#: ProductosClientes/index.php:16
+#: Productos/index.php:16
+#: Productos/modal_view.php:36
+#: element/sidebar_menu.php:35
+msgid "Acciones"
+msgstr ""
+
+#: Clientes/index.php:30
+#: Productos/index.php:29
+msgid "ver"
+msgstr ""
+
+#: Clientes/index.php:31
+msgid "vincular productos"
+msgstr ""
+
+#: Clientes/modal_add.php:2
+msgid "Añadir Cliente"
+msgstr ""
+
+#: Clientes/modal_add.php:36
+#: element/Clientes/data_table.php:24
+msgid "Observaciones"
+msgstr ""
+
+#: Clientes/modal_view.php:8
+#: Clientes/modal_view.php:79
+#: Clientes/modal_vincular_productos.php:75
+#: ProductosClientes/index.php:11
+#: Productos/modal_view.php:32
+msgid "Cliente"
+msgstr ""
+
+#: Clientes/modal_view.php:13
+msgid "Productos Propios"
+msgstr ""
+
+#: Clientes/modal_view.php:18
+msgid "Productos Competencia"
+msgstr ""
+
+#: Clientes/modal_view.php:37
+#: Clientes/modal_view.php:80
+#: Productos/modal_add.php:15
+#: Productos/modal_edit.php:15
+msgid "MPN"
+msgstr ""
+
+#: Clientes/modal_view.php:39
+#: Clientes/modal_view.php:82
+#: ProductosClientes/index.php:14
+#: Productos/modal_view.php:34
+#: element/Clientes/data_table.php:4
+#: element/Productos/data_table.php:4
+msgid "Fª Alta"
+msgstr ""
+
+#: Clientes/modal_view.php:52
+#: ProductosClientes/index.php:33
+#: Productos/index.php:31
+#: Productos/modal_view.php:47
+msgid "eliminar"
+msgstr ""
+
+#: Clientes/modal_view.php:53
+#: ProductosClientes/index.php:34
+#: Productos/index.php:32
+#: Productos/modal_view.php:48
+msgid "Seguro que desea Eliminar el Producto {0}"
+msgstr ""
+
+#: Clientes/modal_view.php:64
+msgid "Este cliente no tiene ningún producto."
+msgstr ""
+
+#: Clientes/modal_view.php:100
+msgid "Este cliente no tiene ningún producto compartido con los demás clientes."
+msgstr ""
+
+#: Clientes/modal_vincular_productos.php:2
+msgid "Vincular Productos Cliente"
+msgstr ""
+
+#: Clientes/modal_vincular_productos.php:28
+#: Clientes/modal_vincular_productos.php:87
+msgid "Busque un producto"
+msgstr ""
+
+#: Clientes/modal_vincular_productos.php:76
+#: Clientes/modal_vincular_productos.php:87
+msgid "Seleccione Cliente"
+msgstr ""
+
+#: Clientes/modal_vincular_productos.php:86
+#: Productos/modal_view.php:8
+msgid "Producto"
+msgstr ""
+
+#: Clientes/modal_vincular_productos.php:97
+msgid "Seleccione Producto"
+msgstr ""
+
+#: Pages/home.php:2
+#: Pages/home.php:3
+msgid "PHP Minderest"
+msgstr ""
+
+#: Pages/home.php:7
+#: Pages/home.php:10
+msgid "Diagrama EER"
+msgstr ""
+
+#: Pages/home.php:14
+msgid "En el supuesto Minderest tiene una tabla de <b>productos</b> y otra de <b>clientes</b>."
+msgstr ""
+
+#: Pages/home.php:16
+msgid "Los productos de Minderest se pueden relacionar con muchos clientes a traves de la tabla <b>productos_clientes</b>."
+msgstr ""
+
+#: Pages/home.php:18
+msgid "Los clientes no se pueden relacionar más de una vez con el mismo producto."
+msgstr ""
+
+#: Pages/home.php:20
+msgid "Los clientes pueden definir (o sobreescribir) los atributos de un producto (nombre, precio, codigo, etc...) en la tabla productos_clientes."
+msgstr ""
+
+#: Pages/home.php:22
+msgid "Puede considerarse un índice <b>FULLTEXT</b> en la columna nombre (e incluso descripción) de los productos (y productos_clientes) para facilitar búsquedas basadas en un índice de relevancia (MATCH(nombre, descripcion, ...) AGAINST('searchString')...)."
+msgstr ""
+
+#: Pages/home.php:25
+msgid "AjaxController"
+msgstr ""
+
+#: Pages/home.php:27
+msgid "Para facilitar las llamadas AJAX, he creado un controlador específico para realizar las distintas llamadas. Estas llamadas aceptan el parametro ?search para filtrar los resultados."
+msgstr ""
+
+#: Pages/home.php:44
+msgid "Theme"
+msgstr ""
+
+#: Pages/home.php:45
+msgid "Para el diseño de las vistas, he creado un <a href=\"https://book.cakephp.org/4/en/views/themes.html\" target=\"_blank\">Theme de CakePHP4</a> adaptando una plantilla de ejemplo de Bootstrap 4.6."
+msgstr ""
+
+#: Pages/home.php:85
+msgid "MVC"
+msgstr ""
+
+#: Pages/home.php:87
+msgid "La aplicación ha sido construida usando la última versión de CakePHP 4. Los archivos más destacados del proyecto se pueden encontrar en:"
+msgstr ""
+
+#: Pages/home.php:169
+msgid "Siguientes Pasos"
+msgstr ""
+
+#: Pages/home.php:171
+msgid "La aplicación puede ser fácilmente internacionalizada y localizada. Cakephp dispone de una utilidad en la consola para generar todos los archivos de traducción (*.pot files) definidos a partir de las funciones <a href=\"https://www.php.net/manual/es/book.gettext.php\" target=\"_blank\">gettext</a> de PHP."
+msgstr ""
+
+#: Pages/home.php:178
+msgid "Los archivos generados se pueden consultar en /resources/locales/ y /plugins/Bootstrap4/resources/locales/ respectivamente."
+msgstr ""
+
+#: ProductosClientes/index.php:12
+#: Productos/index.php:12
+#: element/Productos/data_table.php:15
+msgid "Manufacturer P/N"
+msgstr ""
+
+#: Productos/index.php:3
+#: Productos/modal_add.php:2
+msgid "Añadir Producto"
+msgstr ""
+
+#: Productos/index.php:30
+msgid "editar"
+msgstr ""
+
+#: Productos/modal_add.php:16
+#: Productos/modal_edit.php:16
+msgid "Manufacturer Part Number"
+msgstr ""
+
+#: Productos/modal_add.php:27
+#: Productos/modal_edit.php:27
+#: element/Productos/data_table.php:24
+msgid "Descripción"
+msgstr ""
+
+#: Productos/modal_edit.php:2
+msgid "Editar Producto"
+msgstr ""
+
+#: Productos/modal_view.php:59
+msgid "Este producto no tiene ningún producto de cliente relacionado."
+msgstr ""
+
+#: element/Clientes/data_table.php:6
+#: element/Productos/data_table.php:6
+msgid "Fª Última Modificación"
+msgstr ""
+
+#: element/Clientes/data_table.php:15
+msgid "NIF/CIF"
+msgstr ""
+
+#: element/flash/entity_errors.php:4
+msgid "No se pudo efecturar la acción requerida."
+msgstr ""
+
+#: element/flash/entity_errors.php:12
+msgid "Revise los siguientes datos:"
+msgstr ""
+
+#: element/sidebar_menu.php:3
+msgid "Menú Princial"
+msgstr ""
+
+#: element/sidebar_menu.php:26
+msgid "Fabricantes"
+msgstr ""
+
+#: element/sidebar_menu.php:40
+msgid "Añadir Productos"
+msgstr ""
+
+#: layout/error.php:38
+msgid "Back"
+msgstr ""
+
